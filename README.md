@@ -1,2 +1,2 @@
-## 🚀 Neuste PDF 
-**Rechte Seitenleiste** → **Releases** → **Neuste PDF** → **Assets**
+## 🚀 Neuste PDFs
+**Rechte Seitenleiste** → **Releases** → **PDFs** → **Assets**
