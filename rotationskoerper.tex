@@ -1,5 +1,6 @@
 \documentclass{standalone}
 \usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
 \pgfplotsset{compat=1.18}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -14,6 +15,7 @@
     ytick=\empty,
     ztick=\empty
 ]
+    % Rotationsfläche
     \addplot3[
         surf,
         opacity=0.1,
@@ -85,8 +87,20 @@
         red
     ] coordinates {(1.5,0,0) (1.5,0,{sqrt(1.5)})};
 
+    % Rotationspfeil
+    \addplot3[
+        very thick, -{Stealth[reversed, length=3mm, width=2mm]},
+        shorten >=-1pt,
+        line cap=round,
+        variable y=\y,
+        y domain =0.5*pi:pi
+    ] ({1},
+        {sqrt(1) * cos(deg(\y))},
+        {sqrt(1) * sin(deg(\y))}
+    );
 
-% TODO: DRY code, rotation arrow
+
+% TODO: DRY code
 
 
 \end{axis}
