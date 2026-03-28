@@ -1,0 +1,1 @@
+Die neuste PDF befindet sich in der rechten Spalte unter "Releases -> latest"
