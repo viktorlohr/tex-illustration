@@ -1,2 +1,2 @@
-## Neuste PDF
-**rechte Seitenleiste -> Releases -> Neuste PDF -> Assets**
+## 🚀 Neuste PDF 
+**Rechte Seitenleiste** → **Releases** → **Neuste PDF** → **Assets**
