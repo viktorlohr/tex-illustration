@@ -1,4 +1,2 @@
-# Kompilierte PDF
-Die neuste PDF befindet sich auf der **rechten Seitenleiste** unter
-
-  Releases -> Neuste PDF -> Assets
+## Neuste PDF
+**rechte Seitenleiste -> Releases -> Neuste PDF -> Assets**
