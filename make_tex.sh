@@ -17,8 +17,11 @@ cat <<EOF > "$FILENAME"
 \documentclass{standalone}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
+\renewcommand{\familydefault}{\sfdefault}
+
 \begin{document}
 \begin{tikzpicture}
+
 \end{tikzpicture}
 \end{document}
 EOF

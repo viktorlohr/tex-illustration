@@ -5,6 +5,90 @@
 
 \begin{document}
 \begin{tikzpicture}
+\begin{axis}[
+    view={5}{20},
+    axis lines=center,
+    xlabel=$x$, zlabel=$y$,
+    colormap/viridis,
+    xtick=\empty,
+    ytick=\empty,
+    ztick=\empty
+]
+    \addplot3[
+        surf,
+        opacity=0.1,
+        fill opacity=0.3,
+        z buffer=sort,
+        samples=20,
+        domain=0.5:1.5,
+        y domain=0:2*pi,
+        variable=\x,
+        variable y=\y
+    ] (
+        {\x},
+        {sqrt(\x) * cos(deg(\y))},
+        {sqrt(\x) * sin(deg(\y))}
+    );
 
+    % Blaue Kurve
+    \addplot3[
+        domain=0:2,
+        variable=\x,
+        samples=50,
+        samples y=0,
+        very thick,
+        blue
+    ] (
+        {\x},
+        {0},
+        {sqrt(\x)}
+    )
+    node[above, pos=0.5] {$G_f$};
+
+    %rote Kurve
+    \addplot3[
+        domain=0.5:1.5,
+        variable=\x,
+        samples=50,
+        samples y=0,
+        very thick,
+        red
+    ] (
+        {\x},
+        {0},
+        {sqrt(\x)}
+    );
+
+    % Punkte a und b
+    \addplot3[
+        red,
+        mark=*,
+        mark size=2pt
+    ] coordinates {(0.5,0,0)}
+    node[below] {$a$};
+
+    \addplot3[
+        red,
+        mark=*,
+        mark size=2pt
+    ] coordinates {(1.5,0,0)}
+    node[below] {$b$};
+
+    %Projektionen
+    \addplot3[
+        dashed,
+        red
+    ] coordinates {(0.5,0,0) (0.5,0,{sqrt(0.5)})};
+
+    \addplot3[
+        dashed,
+        red
+    ] coordinates {(1.5,0,0) (1.5,0,{sqrt(1.5)})};
+
+
+% TODO: DRY code, rotation arrow
+
+
+\end{axis}
 \end{tikzpicture}
 \end{document}
