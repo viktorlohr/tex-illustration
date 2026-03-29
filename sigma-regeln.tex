@@ -1,5 +1,6 @@
 \documentclass{standalone}
 \usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
 \pgfplotsset{compat=1.18}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -16,9 +17,9 @@
         $\mu{\!}-{\!}2\sigma$, 
         $\mu{\!}-{\!}\sigma$, 
         $\mu$, 
-        $\mu{\!}-{\!}\sigma$, 
-        $\mu{\!}-{\!}\sigma$,
-        $\mu{\!}-{\!}\sigma$
+        $\mu{\!}+{\!}\sigma$, 
+        $\mu{\!}+{\!}\sigma$,
+        $\mu{\!}+{\!}\sigma$
     },
     ytick=\empty,
     yticklabels={},
@@ -37,14 +38,20 @@
     \draw [black, thick, dotted] (axis cs:100, 0) -- (axis cs:100,0.3);
     \pgfplotsinvokeforeach{55,145}{
         \draw [red, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0075);
+        \draw [red, thick, -stealth] (axis cs: 100,0.0075) 
+            -- node[above, near end] {$2\sigma$}
+            (axis cs:#1,0.0075);
     }
     \pgfplotsinvokeforeach{70,130}{
         \draw [green, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.015);
+         \draw [green, thick, -stealth] (axis cs: 100,0.015) 
+            -- node[above, near end] {$2\sigma$}
+            (axis cs:#1,0.015);
     }
     \pgfplotsinvokeforeach{85,115}{
         \draw [blue, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0225);
         \draw [blue, thick, -stealth] (axis cs: 100,0.0225) 
-            -- node[below] {$\sigma$}
+            -- node[above, near end] {$\sigma$}
             (axis cs:#1,0.0225);
     }
 
