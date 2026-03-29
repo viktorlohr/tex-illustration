@@ -8,6 +8,11 @@
 \begin{document}
 \begin{tikzpicture}
 \begin{axis}[
+    legend style = {
+        at={(0.95,0.95)}, 
+        anchor=north east,
+        cells={anchor=west}
+    },
     axis lines = left,
     samples=100,
     domain=40:160,
@@ -33,14 +38,15 @@
     }
 ]   
     % Gaußkurve
-    \addplot [black, name path=gauss] {1/(15*sqrt(2*pi)) * exp(-((x-100)^2)/(500))};
+    \addplot [black, name path=gauss, forget plot] 
+        {1/(15*sqrt(2*pi)) * exp(-((x-100)^2)/(500))};
 
     % Vertikale Linien und Pfeile
     \draw [black, thick, dotted] (axis cs:100, 0) -- (axis cs:100,0.3);
     \pgfplotsinvokeforeach{55,145}{
         \draw [red, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0075);
         \draw [red, thick, -stealth] (axis cs: 100,0.0075) 
-            -- node[above, near end] {$2\sigma$}
+            -- node[above, near end] {$3\sigma$}
             (axis cs:#1,0.0075);
     }
     \pgfplotsinvokeforeach{70,130}{
@@ -60,19 +66,35 @@
     \path[name path=axis] (axis cs:40,0) -- (axis cs:160,0);
 
     % Flächen
-    \addplot [pattern={Dots[distance=5pt]}, pattern color=red] fill between[
+    \addplot [
+        pattern={Dots[distance=5pt]}, 
+        pattern color=red,
+        area legend
+        ] 
+        fill between[
         of=gauss and axis, 
         soft clip={domain=55:145}
         ];
-    \addplot [pattern={Lines[angle=45, distance=10pt]}, pattern color=green] fill between[
+        \addlegendentry{\color{red} $99,7\%$}
+    \addplot [pattern={Lines[angle=45, distance=10pt]}, 
+    pattern color=green,
+    area legend
+    ] 
+    fill between[
         of=gauss and axis, 
         soft clip={domain=70:130}
         ];
-    \addplot [pattern={Lines[angle=135, distance=10pt]}, pattern color=blue] fill between[
+    \addlegendentry{\color{green} $95,4\%$}
+    \addplot [pattern={Lines[angle=135, distance=10pt]}, 
+    pattern color=blue,
+    area legend] 
+    fill between[
         of=gauss and axis, 
         soft clip={domain=85:115}
         ];
+    \addlegendentry{\color{blue} $68,3\%$}
     
+
 
 
     
