@@ -1,6 +1,7 @@
 \documentclass{standalone}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns.meta}
 \pgfplotsset{compat=1.18}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -18,8 +19,8 @@
         $\mu{\!}-{\!}\sigma$, 
         $\mu$, 
         $\mu{\!}+{\!}\sigma$, 
-        $\mu{\!}+{\!}\sigma$,
-        $\mu{\!}+{\!}\sigma$
+        $\mu{\!}+{\!}2\sigma$,
+        $\mu{\!}+{\!}3\sigma$
     },
     ytick=\empty,
     yticklabels={},
@@ -32,9 +33,9 @@
     }
 ]   
     % Gaußkurve
-    \addplot [black] {1/(15*sqrt(2*pi)) * exp(-((x-100)^2)/(500))};
+    \addplot [black, name path=gauss] {1/(15*sqrt(2*pi)) * exp(-((x-100)^2)/(500))};
 
-    % Vertikale Linien un Pfeile
+    % Vertikale Linien und Pfeile
     \draw [black, thick, dotted] (axis cs:100, 0) -- (axis cs:100,0.3);
     \pgfplotsinvokeforeach{55,145}{
         \draw [red, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0075);
@@ -54,6 +55,25 @@
             -- node[above, near end] {$\sigma$}
             (axis cs:#1,0.0225);
     }
+
+    % Unsichtbarer Pfad auf x-Achse für Flächenberechnung
+    \path[name path=axis] (axis cs:40,0) -- (axis cs:160,0);
+
+    % Flächen
+    \addplot [pattern={Dots[distance=5pt]}, pattern color=red] fill between[
+        of=gauss and axis, 
+        soft clip={domain=55:145}
+        ];
+    \addplot [pattern={Lines[angle=45, distance=10pt]}, pattern color=green] fill between[
+        of=gauss and axis, 
+        soft clip={domain=70:130}
+        ];
+    \addplot [pattern={Lines[angle=135, distance=10pt]}, pattern color=blue] fill between[
+        of=gauss and axis, 
+        soft clip={domain=85:115}
+        ];
+    
+
 
     
 \end{axis}
