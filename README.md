@@ -1,11 +1,5 @@
-## ❓Fragen
-<details>
-<summary><b>Liste anzeigen</b></summary>
-
-- [ ] sigma Regeln y-Werte entfernen (unerheblich)?
-- [ ] allgemein x und y-Beschriftung einfügen?
-
-</details>
+## 🚫 Tippfehler
+- [ ] Aufgabe 39: Letzter Abschnitt von F(x) muss = 1 sein.
 
 ## 📝 to do
 <details>
@@ -15,7 +9,7 @@
 - [x] Normalverteilung 10er Potenz konvertieren
 - [x] Legende größer
 - [x] Normalverteilung y-Achse Beschriftung
-- [ ] Restliche .pngs konvertieren
+- [x] Restliche .pngs konvertieren
 - [ ] Implementation im Skript checken
 
 </details>

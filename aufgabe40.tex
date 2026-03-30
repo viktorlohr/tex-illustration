@@ -9,6 +9,64 @@
 
 \begin{document}
 \begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=3,
+    ymin=0, ymax=1.1,
+    axis lines=left,
+    grid=major,
+    height=4cm,
+    width=8cm
+]
 
+%f(x)
+\addplot[
+    domain=0:0.75,
+    color=myLightGray,
+    thick
+] {
+    \x
+} node[above] {$G_f$};
+\addplot[
+    domain=0.75:(8/3),
+    color=myLightGray,
+    thick
+] {
+    -9/23*\x + 24/23
+};
+\addplot[
+    domain=(8/3):3,
+    color=myLightGray,
+    very thick
+] {
+    0*\x
+};
+
+
+%F(x)
+\addplot[
+    domain=0:0.75,
+    color=myDarkGray,
+    thick
+] {
+    0.5*\x^2
+};
+\addplot[
+    domain=0.75:(8/3),
+    color=myDarkGray,
+    thick
+] {
+    -9/46*\x^2 + 24/23*\x - 9/23
+} node[below, near end] {$G_F$};
+\addplot[
+    domain=(8/3):3,
+    color=myDarkGray,
+    thick
+] {
+    1
+};
+
+
+
+\end{axis}
 \end{tikzpicture}
 \end{document}
