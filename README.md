@@ -1,3 +1,12 @@
+## ❓Fragen
+<details>
+<summary><b>Liste anzeigen</b></summary>
+
+- [] sigma Regeln y-Werte entfernen (unerheblich)?
+- [] allgemein x und y-Beschriftung einfügen?
+
+</details>
+
 ## 📝 to do
 <details>
 <summary><b>Liste anzeigen</b></summary>
