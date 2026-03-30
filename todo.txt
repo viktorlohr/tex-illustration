@@ -1,0 +1,6 @@
+- allgemein Schwarz-Weiß!
+- sigma regeln 10er Potenz konvertieren (Prozent)
+- Legende größer
+- Normalverteilung y-Achse Beschriftung in Prozent auch am besten
+- Implementation im Skript checken
+- andere .pngs

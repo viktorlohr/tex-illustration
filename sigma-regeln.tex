@@ -1,9 +1,14 @@
 \documentclass{standalone}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
+%\usetikzlibrary{patterns.meta}
 \usetikzlibrary{patterns.meta}
 \pgfplotsset{compat=1.18}
 \renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{myDarkGray}{gray}{0.20}  
+\definecolor{myMidGray}{gray}{0.55}   
+\definecolor{myLightGray}{gray}{0.75}  
 
 \begin{document}
 \begin{tikzpicture}
@@ -11,8 +16,10 @@
     legend style = {
         at={(0.95,0.95)}, 
         anchor=north east,
-        cells={anchor=west}
+        cells={anchor=west},
+        font=\huge
     },
+    legend image post style={scale=1.5},
     axis lines = left,
     samples=100,
     domain=40:160,
@@ -27,8 +34,11 @@
         $\mu{\!}+{\!}2\sigma$,
         $\mu{\!}+{\!}3\sigma$
     },
-    ytick=\empty,
-    yticklabels={},
+    scaled y ticks=false,
+    y tick label style={
+        /pgf/number format/fixed,
+        /pgf/number format/precision=2,
+    },
     height=6cm,
     width=12cm,
     no markers,
@@ -44,20 +54,20 @@
     % Vertikale Linien und Pfeile
     \draw [black, thick, dotted] (axis cs:100, 0) -- (axis cs:100,0.3);
     \pgfplotsinvokeforeach{55,145}{
-        \draw [red, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0075);
-        \draw [red, thick, -stealth] (axis cs: 100,0.0075) 
+        \draw [myMidGray, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0075);
+        \draw [myMidGray, thick, -stealth] (axis cs: 100,0.0075) 
             -- node[above, near end] {$3\sigma$}
             (axis cs:#1,0.0075);
     }
     \pgfplotsinvokeforeach{70,130}{
-        \draw [green, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.015);
-         \draw [green, thick, -stealth] (axis cs: 100,0.015) 
+        \draw [myLightGray, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.015);
+         \draw [myLightGray, thick, -stealth] (axis cs: 100,0.015) 
             -- node[above, near end] {$2\sigma$}
             (axis cs:#1,0.015);
     }
     \pgfplotsinvokeforeach{85,115}{
-        \draw [blue, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0225);
-        \draw [blue, thick, -stealth] (axis cs: 100,0.0225) 
+        \draw [myDarkGray, thick, dashed] (axis cs:#1, 0) -- (axis cs:#1,0.0225);
+        \draw [myDarkGray, thick, -stealth] (axis cs: 100,0.0225) 
             -- node[above, near end] {$\sigma$}
             (axis cs:#1,0.0225);
     }
@@ -68,34 +78,38 @@
     % Flächen
     \addplot [
         pattern={Dots[distance=5pt]}, 
-        pattern color=red,
+        pattern color=myMidGray,
         area legend
         ] 
         fill between[
         of=gauss and axis, 
         soft clip={domain=55:145}
         ];
-        \addlegendentry{\color{red} $99,7\%$}
-    \addplot [pattern={Lines[angle=45, distance=10pt]}, 
-    pattern color=green,
-    area legend
+        \addlegendentry{\color{myMidGray} $99,7\%$}
+    \addplot [
+        pattern={Lines[angle=135, distance=5pt]}, 
+        pattern color=myLightGray,
+        thick,
+        area legend
     ] 
     fill between[
         of=gauss and axis, 
         soft clip={domain=70:130}
         ];
-    \addlegendentry{\color{green} $95,4\%$}
-    \addplot [pattern={Lines[angle=135, distance=10pt]}, 
-    pattern color=blue,
-    area legend] 
+    \addlegendentry{\color{myLightGray} $95,4\%$}
+    \addplot [
+        pattern={Lines[angle=45]}, 
+        pattern color=myDarkGray,
+        area legend
+        ] 
     fill between[
         of=gauss and axis, 
         soft clip={domain=85:115}
         ];
-    \addlegendentry{\color{blue} $68,3\%$}
+    \addlegendentry{\color{myDarkGray} $68,3\%$}
     
 
-
+%TODO: Legende hübscher machen
 
     
 \end{axis}

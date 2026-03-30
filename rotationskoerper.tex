@@ -4,13 +4,20 @@
 \pgfplotsset{compat=1.18}
 \renewcommand{\familydefault}{\sfdefault}
 
+\definecolor{myDarkGray}{gray}{0.3}  
+\definecolor{myMidGray}{gray}{0.55}   
+\definecolor{myLightGray}{gray}{0.75}  
+
 \begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-    view={5}{20},
+    view={20}{20},
     axis lines=center,
     xlabel=$x$, zlabel=$y$,
-    colormap/viridis,
+    colormap={customgray}{
+    color(0cm)=(myLightGray); 
+    color(1cm)=(myMidGray)
+    },
     xtick=\empty,
     ytick=\empty,
     ztick=\empty
@@ -39,7 +46,7 @@
         samples=50,
         samples y=0,
         very thick,
-        blue
+        myMidGray
     ] (
         {\x},
         {0},
@@ -54,7 +61,7 @@
         samples=50,
         samples y=0,
         very thick,
-        red
+        myDarkGray
     ] (
         {\x},
         {0},
@@ -63,14 +70,14 @@
 
     % Punkte a und b
     \addplot3[
-        red,
+        myDarkGray,
         mark=*,
         mark size=2pt
     ] coordinates {(0.5,0,0)}
     node[below] {$a$};
 
     \addplot3[
-        red,
+        myDarkGray,
         mark=*,
         mark size=2pt
     ] coordinates {(1.5,0,0)}
@@ -79,12 +86,12 @@
     %Projektionen
     \addplot3[
         dashed,
-        red
+        myDarkGray
     ] coordinates {(0.5,0,0) (0.5,0,{sqrt(0.5)})};
 
     \addplot3[
         dashed,
-        red
+        myDarkGray
     ] coordinates {(1.5,0,0) (1.5,0,{sqrt(1.5)})};
 
     % Rotationspfeil
@@ -93,7 +100,8 @@
         shorten >=-1pt,
         line cap=round,
         variable y=\y,
-        y domain =0.5*pi:pi
+        y domain =0.55*pi:pi,
+        myDarkGray
     ] ({1},
         {sqrt(1) * cos(deg(\y))},
         {sqrt(1) * sin(deg(\y))}
