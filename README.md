@@ -10,7 +10,7 @@
 - [x] Legende größer
 - [x] Normalverteilung y-Achse Beschriftung
 - [x] Restliche .pngs konvertieren
-- [ ] Implementation im Skript checken
+- [x] Implementation im Skript checken
 
 </details>
 
