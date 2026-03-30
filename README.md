@@ -11,5 +11,5 @@
 - [x] normalverteilung 10er Potenz konvertieren
 - [x] Legende größer
 - [x] Normalverteilung y-Achse Beschriftung
-- [] Implementation im Skript checken
-- [] andere .pngs
+- [ ] Implementation im Skript checken
+- [ ] andere .pngs
