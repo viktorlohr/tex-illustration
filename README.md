@@ -11,4 +11,4 @@
 - [x] Legende größer
 - [x] Normalverteilung y-Achse Beschriftung
 - [ ] Implementation im Skript checken
-- [ ] Andere .pngs konvertieren
+- [ ] Andere .pngs konvertieren* [aufgabe48_angabe.tex](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/viktorlohr/tex-illustration/refs/heads/main/aufgabe48_angabe.tex)
