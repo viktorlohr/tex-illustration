@@ -19,6 +19,10 @@ cat <<EOF > "$FILENAME"
 \pgfplotsset{compat=1.18}
 \renewcommand{\familydefault}{\sfdefault}
 
+\definecolor{myDarkGray}{gray}{0.3}  
+\definecolor{myMidGray}{gray}{0.55}   
+\definecolor{myLightGray}{gray}{0.75}  
+
 \begin{document}
 \begin{tikzpicture}
 
