@@ -13,6 +13,7 @@
 \begin{tikzpicture}
 \begin{axis}[
     axis lines = left,
+    grid=major,
     xlabel style={
         at={(ticklabel* cs:1)}, 
         anchor=north, 
@@ -49,7 +50,7 @@
 
     %Flächen
     \addplot[
-        myDarkGray,
+        pattern color=myDarkGray,
         pattern={Dots[distance=5pt]}
     ] fill between [
         of=midcurve and axis,
@@ -57,7 +58,7 @@
     ];
     
     \addplot[
-        myLightGray,
+        pattern color=myLightGray,
         pattern={Lines[angle=45]}
     ] fill between [
         of=leftcurve and axis,
@@ -65,7 +66,7 @@
     ];
 
     \addplot[
-        myDarkGray,
+        pattern color=myDarkGray,
         pattern={Lines[angle=135]}
     ] fill between [
         of=rightcurve and axis,
