@@ -2,8 +2,8 @@
 <details>
 <summary><b>Liste anzeigen</b></summary>
 
-- [] sigma Regeln y-Werte entfernen (unerheblich)?
-- [] allgemein x und y-Beschriftung einfügen?
+- [ ] sigma Regeln y-Werte entfernen (unerheblich)?
+- [ ] allgemein x und y-Beschriftung einfügen?
 
 </details>
 
