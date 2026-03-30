@@ -28,3 +28,4 @@
 * [aufgabe48_lsg.tex](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/viktorlohr/tex-illustration/refs/heads/main/aufgabe48_lsg.tex)
 * [aufgabe50_lsg_a.tex](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/viktorlohr/tex-illustration/refs/heads/main/aufgabe50_lsg_a.tex)
 * [aufgabe50_lsg_b.tex](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/viktorlohr/tex-illustration/refs/heads/main/aufgabe50_lsg_b.tex)
+* [aufgabe40.tex](https://www.overleaf.com/docs?snip_uri=https://raw.githubusercontent.com/viktorlohr/tex-illustration/refs/heads/main/aufgabe40.tex)
