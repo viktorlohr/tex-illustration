@@ -22,6 +22,7 @@ cat <<EOF > "$FILENAME"
 \definecolor{myDarkGray}{gray}{0.3}  
 \definecolor{myMidGray}{gray}{0.55}   
 \definecolor{myLightGray}{gray}{0.75}  
+\include{farbeinstellung.tex}
 
 \begin{document}
 \begin{tikzpicture}
