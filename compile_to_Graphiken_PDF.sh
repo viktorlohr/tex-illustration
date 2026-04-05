@@ -1,0 +1,1 @@
+latexmk -pdf -outdir=../../Graphiken_PDF/tikz-standalones *.tex
