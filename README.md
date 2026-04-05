@@ -7,8 +7,8 @@
 - [ ] Aufgabe 39: Letzter Abschnitt von F(x) muss = 1 sein.
 
 ## 📝 to do
-- [ ] Link zum fertigen Skript einfügen
-- [ ] Kopieren ins Skript-Verzeichnis automatisieren
+- [x] Link zum fertigen Skript einfügen
+- [x] Kopieren ins Skript-Verzeichnis automatisieren
 - [x] Aufgabe51.png ersetzen
 - [x] Allgemein Graustufen!
 - [x] Normalverteilung 10er Potenz konvertieren
