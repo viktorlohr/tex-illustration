@@ -43,7 +43,7 @@ for filepath in os.listdir('.'):
 
 
         # include the pdfs in alle_bilder.tex
-        lines.append(f"\\includegraphics{{{no_ext_name}}}\n\clearpage")
+        lines.append(f"{no_ext_name}\n\\includegraphics{{{no_ext_name}}}\n\clearpage")
 
 lines.append("\\end{document}")
 
@@ -83,6 +83,3 @@ for filepath in ["alle_bilder.tex", script_path]:
     subprocess.run(["cp", pdf_path, dest_path])
     subprocess.run(["open", gdrive_dest_dir])
 
-
-
-# todo: get only pdf name in the last step, not whole path
