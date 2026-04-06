@@ -43,7 +43,7 @@ for filepath in os.listdir('.'):
 
 
         # include the pdfs in alle_bilder.tex
-        lines.append(f"{no_ext_name}\n\\includegraphics{{{no_ext_name}}}\n\clearpage")
+        lines.append(f"\n\\verb|{no_ext_name}.tex|\n\\includegraphics{{{no_ext_name}}}\n\clearpage")
 
 lines.append("\\end{document}")
 
